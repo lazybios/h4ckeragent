@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  has_many :accesses
+  has_many :accesses, :dependent => :destroy
 
   before_create { generate_token(:token) }
 

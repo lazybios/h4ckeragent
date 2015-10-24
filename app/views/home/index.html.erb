@@ -1,6 +1,8 @@
 <h1>Todo</h1>
 <% if current_user %>
     <p><%= current_user.email %> | <%= link_to "登出", :logout, method: "delete" %> | <%= link_to "设置", :setting %></p>
+    <p><%= link_to "生成PASSCODE", :new_access %></p>
+    <p><%= link_to "生成PASSCODE", :new_access %></p>
 <% else %>
     <p><%= link_to "登录", :login %>|<%= link_to "注册", :signup %></p>
 <% end %>
@@ -22,10 +24,9 @@
     <li>Passcode系统(Accesses)</li>
     <ul>
         <li>passcode接口</li>
-    </ul>
-    <ul>
-        <li>生成token</li>
-        <li>统计token访问情况</li>
+        <li><del>生成</del></li>
+        <li><del>无效</del></li>
+        <li>统计passcode访问情况</li>
     </ul>
     <li>简历系统(Resume)</li>
     <ul>

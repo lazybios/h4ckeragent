@@ -1,0 +1,8 @@
+<h1>Passcodes#edit</h1>
+<%= form_for @access do |f| %>
+    <p>PASSCODE名称</p>
+    <p><%= f.text_field :remark %></p>
+    <p>过期时间</p>
+    <p><%= f.text_field :expire_at %></p>
+    <p><%= f.submit "更新" %></p>
+<% end %>

@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   get "setting" => "users#setting" , as: 'setting'
   post "bind_wechat" => "users#bind_wechat" , as: 'bind_wechat'
 
+  resources :accesses do
+    get "invalid" => "accesses#set_invalid"
+    get "valid" => "accesses#set_valid"
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

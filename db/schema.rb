@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024054643) do
+ActiveRecord::Schema.define(version: 20151024065739) do
 
   create_table "accesses", force: :cascade do |t|
     t.string   "passcode",    limit: 255
@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(version: 20151024054643) do
     t.integer  "resume_id",   limit: 4
     t.string   "sharecode",   limit: 255
     t.datetime "expire_at"
-    t.integer  "click_count", limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "click_count", limit: 4,   default: 0
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.boolean  "is_invalid",              default: false
   end
 
   create_table "users", force: :cascade do |t|
