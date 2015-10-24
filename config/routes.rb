@@ -1,17 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'resumes/index'
-
-  get 'resumes/show'
-
-  get 'resumes/edit'
-
-  get 'resumes/update'
-
-  get 'resumes/new'
-
-  get 'resumes/create'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -27,6 +14,8 @@ Rails.application.routes.draw do
 
   get "setting" => "users#setting" , as: 'setting'
   post "bind_wechat" => "users#bind_wechat" , as: 'bind_wechat'
+
+  get "get" => "accesses#get_passcode", as: 'get_passcode'
 
   resources :accesses do
     get "invalid" => "accesses#set_invalid"

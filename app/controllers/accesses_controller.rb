@@ -1,5 +1,5 @@
 class AccessesController < ApplicationController
-
+  before_action :require_user
   before_action :set_access, only: [:edit, :update, :show, :destroy]
 
   def new
@@ -48,6 +48,15 @@ class AccessesController < ApplicationController
     @access = Access.find_by_id(params[:access_id])
     @access.update_attribute(:is_invalid, false)
     redirect_to :accesses
+  end
+
+  def get_passcode
+    if params.key?(:keyword)
+      @access = Access.find_by_remark(params[:keyword])
+      render json: {passcode: @access.passcode}
+    else
+      render json: {error: "keyword invalid"}
+    end
   end
 
   private

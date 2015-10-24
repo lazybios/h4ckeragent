@@ -4,6 +4,16 @@
     <p>WeChat二维码地址</p>
     <p>
         <%= text_field_tag :wechat %>
-        <%= submit_tag "绑定" %>
+    </p>
+    <p>Slack WebHook地址</p>
+    <p>
+        <%= text_field_tag :slack_webhook %>
+    </p>
+    <p>Slack Channel</p>
+    <p>
+        <%= text_field_tag :slack_channel %>
+    </p>
+    <p>
+        <%= submit_tag "设置" %>
     </p>
 <% end %>

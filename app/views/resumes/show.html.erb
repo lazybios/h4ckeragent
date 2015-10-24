@@ -1,4 +1,4 @@
 <h1><%= @resume.title %></h1>
 <div>
-    <%= @resume.body %>
+    <%= markdown(@resume.body_origin) %>
 </div>

@@ -37,14 +37,17 @@ class UsersController < ApplicationController
   end
 
   def bind_wechat
-    current_user.update_attribute(:wechat, params[:wechat])
-    redirect_to :root, success: "绑定成功"
+    current_user.update_attributes(
+                        wechat: params[:wechat],
+                        slack_webhook: params[:slack_webhook],
+                        slack_channel:  params[:slack_channel])
+    redirect_to :root, success: "设置成功"
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, :wechat, :slack_webhook, :slack_channel)
   end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024075404) do
+ActiveRecord::Schema.define(version: 20151024103050) do
 
   create_table "accesses", force: :cascade do |t|
     t.string   "passcode",    limit: 255
@@ -27,21 +27,24 @@ ActiveRecord::Schema.define(version: 20151024075404) do
   end
 
   create_table "resumes", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.string   "url",        limit: 255
-    t.text     "body",       limit: 65535
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "title",       limit: 255
+    t.string   "url",         limit: 255
+    t.text     "body",        limit: 65535
+    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.text     "body_origin", limit: 65535
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           limit: 255
     t.string   "password_digest", limit: 255
     t.string   "wechat",          limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.string   "token",           limit: 255
+    t.string   "slack_webhook",   limit: 255, default: ""
+    t.string   "slack_channel",   limit: 255, default: ""
   end
 
 end
