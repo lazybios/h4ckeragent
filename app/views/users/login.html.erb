@@ -1,0 +1,8 @@
+<h1>登录</h1>
+<%= form_for :user, url: :create_login_session  do |f| %>
+    <p>邮箱</p>
+    <p><%= f.text_field :email %></p>
+    <p>密码</p>
+    <p><%= f.password_field :password %></p>
+    <p><%= f.submit "登录" %></p>
+<% end %>

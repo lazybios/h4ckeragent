@@ -1,0 +1,46 @@
+<h1>Todo</h1>
+<% if current_user %>
+    <p><%= current_user.email %> | <%= link_to "登出", :logout, method: "delete" %> | <%= link_to "设置", :setting %></p>
+<% else %>
+    <p><%= link_to "登录", :login %>|<%= link_to "注册", :signup %></p>
+<% end %>
+
+
+<ul>
+    <li>用户系统(Users)</li>
+    <ul>
+        <li><del>登录</del></li>
+        <li><del>注册</del></li>
+        <li><del>登出</del></li>
+        <li>个人信息</li>
+        <li><del>绑定个人微信账号</del></li>
+        <ul>
+            <li>webhook</li>
+            <li>事件列表</li>
+        </ul>
+    </ul>
+    <li>Passcode系统(Accesses)</li>
+    <ul>
+        <li>passcode接口</li>
+    </ul>
+    <ul>
+        <li>生成token</li>
+        <li>统计token访问情况</li>
+    </ul>
+    <li>简历系统(Resume)</li>
+    <ul>
+        <li>创建简历</li>
+        <li>markdown解析</li>
+    </ul>
+    <li>后台统计</li>
+    <ul>
+        <li>
+            集成后台UI，数据可视化
+        </li>
+    </ul>
+    <li>博客插件</li>
+    <ul>
+        <li>Hire me</li>
+        <li>输入passcode 或 扫描微信求passcode</li>
+    </ul>
+</ul>

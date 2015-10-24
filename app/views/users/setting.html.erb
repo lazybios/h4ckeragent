@@ -1,0 +1,9 @@
+<h2>个人设置</h2>
+
+<%= form_tag '/bind_wechat'  do |f| %>
+    <p>WeChat二维码地址</p>
+    <p>
+        <%= text_field_tag :wechat %>
+        <%= submit_tag "绑定" %>
+    </p>
+<% end %>

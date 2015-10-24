@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  passcode: MyString
+  remark: MyString
+  user_id: 1
+  resume_id: 1
+  sharecode: MyString
+  expire_at: 2015-10-24 05:46:43
+  click_count: 1
+
+two:
+  passcode: MyString
+  remark: MyString
+  user_id: 1
+  resume_id: 1
+  sharecode: MyString
+  expire_at: 2015-10-24 05:46:43
+  click_count: 1
