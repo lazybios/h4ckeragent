@@ -57,6 +57,6 @@ class AccessesController < ApplicationController
   end
 
   def access_params
-    params.require(:access).permit(:remark, :expire_at)
+    params.require(:access).permit(:remark, :expire_at, :resume_id)
   end
 end

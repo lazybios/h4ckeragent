@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'resumes/index'
+
+  get 'resumes/show'
+
+  get 'resumes/edit'
+
+  get 'resumes/update'
+
+  get 'resumes/new'
+
+  get 'resumes/create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -20,6 +32,8 @@ Rails.application.routes.draw do
     get "invalid" => "accesses#set_invalid"
     get "valid" => "accesses#set_valid"
   end
+
+  resources :resumes
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

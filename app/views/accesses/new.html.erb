@@ -4,5 +4,8 @@
     <p><%= f.text_field :remark %></p>
     <p>过期时间</p>
     <p><%= f.text_field :expire_at %></p>
+    <p>绑定的简历</p>
+    <p><%= select "access", "resume_id", current_user.resumes.collect { |r| [r.title, r.id]} %></p>
+    <p><%= link_to "创建更多简历", :resumes %></p>
     <p><%= f.submit "生成" %></p>
 <% end %>

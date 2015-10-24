@@ -1,0 +1,8 @@
+<h1>Resumes#new</h1>
+<%= form_for @resume do |f| %>
+    <p>标题</p>
+    <p><%= f.text_field :title %></p>
+    <p>简历内容</p>
+    <p><%= f.text_area :body, size: "80x20" %></p>
+    <p><%= f.submit "提交" %></p>
+<% end %>

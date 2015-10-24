@@ -1,5 +1,7 @@
 class Access < ActiveRecord::Base
   belongs_to :user
+  belongs_to :resume
+
   before_create { generate_token(:passcode, 10); generate_token(:sharecode, 4) }
 
 

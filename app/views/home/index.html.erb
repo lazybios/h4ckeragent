@@ -2,7 +2,9 @@
 <% if current_user %>
     <p><%= current_user.email %> | <%= link_to "登出", :logout, method: "delete" %> | <%= link_to "设置", :setting %></p>
     <p><%= link_to "生成PASSCODE", :new_access %></p>
-    <p><%= link_to "生成PASSCODE", :new_access %></p>
+    <p><%= link_to "PASSCODE列表", :accesses %></p>
+    <p><%= link_to "创建简历", :new_resume %></p>
+    <p><%= link_to "查看简历", :resumes %></p>
 <% else %>
     <p><%= link_to "登录", :login %>|<%= link_to "注册", :signup %></p>
 <% end %>
@@ -30,7 +32,7 @@
     </ul>
     <li>简历系统(Resume)</li>
     <ul>
-        <li>创建简历</li>
+        <li><del>创建简历</del></li>
         <li>markdown解析</li>
     </ul>
     <li>后台统计</li>

@@ -4,7 +4,7 @@
         <% if not access.is_invalid %>
             <%= access.passcode %> |
             <%= access.remark %> |
-            <%= link_to "简历地址", "/?passcode=#{access.passcode}" %> |
+            <%= link_to "简历地址", "#{resume_url(access.resume)}/?passcode=#{access.passcode}" %> |
             <%= link_to "编辑", edit_access_path(access) %> |
             <%= link_to "删除", access_path(access), method: "delete" %>
             <%= link_to "失效", access_invalid_path(access) %>

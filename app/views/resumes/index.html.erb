@@ -1,0 +1,8 @@
+<h1>Resumes#index</h1>
+<% @resumes.each do |resume| %>
+    <p>
+        <%= link_to resume.title, resume_path(resume) %> |
+        <%= link_to "编辑", edit_resume_path(resume) %> |
+        <%= link_to "删除", resume_path(resume), method: "delete" %>
+    </p>
+<% end %>
