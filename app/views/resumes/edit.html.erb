@@ -1,8 +1,26 @@
-<h1>Resumes#edit</h1>
-<%= form_for @resume do |f| %>
-    <p>标题</p>
-    <p><%= f.text_field :title %></p>
-    <p>简历内容</p>
-    <p><%= f.text_area :body_origin, size: "80x20" %></p>
-    <p><%= f.submit "更新" %></p>
-<% end %>
+        <div class="wrapper clearfix">
+            <div class="tips">
+                <p>这是个提醒</p>
+            </div>
+            <div class="left">
+                <ul>
+                    <li><%= link_to "查看简历", :resumes %></li>
+                    <li><%= link_to "创建简历", :new_resume %></li>
+                    <li><%= link_to "创建PASSCODE", :new_access %></li>
+                    <li><%= link_to "PASSCODE列表", :accesses %></li>
+                    <li><a href="">访问统计</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <h2>编辑简历</h2>
+                <div class="right-content">
+                    <%= form_for @resume do |f| %>
+                        <p>标题</p>
+                        <p><%= f.text_field :title %></p>
+                        <p>简历内容</p>
+                        <p><%= f.text_area :body_origin, size: "80x20" %></p>
+                        <p><%= f.submit "更新" %></p>
+                    <% end %>
+                </div>
+            </div>
+        </div>

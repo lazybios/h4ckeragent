@@ -1,22 +1,57 @@
-<h1>PASSCODE列表</h1>
-<% @accesses.each do |access| %>
-    <p>
-        <% if not access.is_invalid %>
-            <%= access.passcode %> |
-            <%= access.remark %> |
-            <%= link_to "简历地址", "#{resume_url(access.resume)}/?passcode=#{access.passcode}" %> |
-            <%= link_to "编辑", edit_access_path(access) %> |
-            <%= link_to "删除", access_path(access), method: "delete" %>
-            <%= link_to "失效", access_invalid_path(access) %>
-        <% else %>
-            <del>
-                <%= access.passcode %> |
-                <%= access.remark %> |
-                <%= link_to "简历地址", "/?passcode=#{access.passcode}" %> |
-                <%= link_to "编辑", edit_access_path(access) %> |
-                <%= link_to "删除", access_path(access), method: "delete" %>
-                <%= link_to "恢复", access_valid_path(access) %>
-            </del>
-        <% end %>
+        <div class="wrapper clearfix">
+            <div class="tips">
+                <p>这是个提醒</p>
+            </div>
+            <div class="left">
+                <ul>
+                    <li><%= link_to "查看简历", :resumes %></li>
+                    <li><%= link_to "创建简历", :new_resume %></li>
+                    <li><%= link_to "创建PASSCODE", :new_access %></li>
+                    <li><%= link_to "PASSCODE列表", :accesses %></li>
+                    <li><a href="">访问统计</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <h2>查看简历</h2>
+                <div class="right-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>标题</th>
+                                <th>备注</th>
+                                <th>访问地址</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @accesses.each do |access| %>
+                                <tr>
+                                    <p>
+                                        <% if not access.is_invalid %>
+                                            <td><%= access.passcode %></td>
+                                            <td><%= access.remark %></td>
+                                            <td><%= link_to "简历地址", "#{resume_url(access.resume)}/?passcode=#{access.passcode}" %></td>
+                                            <td>
+                                                <%= link_to "编辑", edit_access_path(access) %> |
+                                                <%= link_to "删除", access_path(access), method: "delete" %>
+                                                <%= link_to "失效", access_invalid_path(access) %>
+                                            </td>
+                                            <tr/>
+                                            <% else %>
+                                                <td><del><%= access.passcode %></del></td>
+                                                <td><%= access.remark %></td>
+                                                <td><%= link_to "简历地址", "#{resume_url(access.resume)}/?passcode=#{access.passcode}" %></td>
+                                                <td>
+                                                    <%= link_to "编辑", edit_access_path(access) %> |
+                                                    <%= link_to "删除", access_path(access), method: "delete" %>
+                                                    <%= link_to "恢复", access_valid_path(access) %>
+                                                </td>
+                                                <tr/>
+                                                <% end %>
     </p>
 <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>

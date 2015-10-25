@@ -15,6 +15,7 @@ class ResumesController < ApplicationController
         bcs.deliver(@access.first.remark, @resume.title)
       end
     end
+    render :layout => "layouts/resume"
   end
 
   def edit

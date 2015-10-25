@@ -1,4 +1,19 @@
-<h1>注册</h1>
+        <div class="wrapper clearfix">
+            <div class="tips">
+                <p>这是个提醒</p>
+            </div>
+            <div class="left">
+                <ul>
+                    <li><%= link_to "查看简历", :resumes %></li>
+                    <li><%= link_to "创建简历", :new_resume %></li>
+                    <li><%= link_to "创建PASSCODE", :new_access %></li>
+                    <li><%= link_to "PASSCODE列表", :accesses %></li>
+                    <li><a href="">访问统计</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <h2>注册</h2>
+                <div class="right-content">
 <%= form_for @user do |f|%>
     <p>邮件</p>
     <p><%= f.text_field :email %></p>
@@ -8,3 +23,7 @@
     <p><%= f.password_field :password_confirmation %></p>
     <p><%= f.submit "注册" %></p>
 <% end %>
+
+                </div>
+            </div>
+        </div>

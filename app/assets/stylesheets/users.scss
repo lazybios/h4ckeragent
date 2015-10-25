@@ -1,3 +1,114 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background: #f9f9f9;
+  color: #555; }
+
+a {
+  text-decoration: none;
+  color: #3aa3e3; }
+
+ul {
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+
+header {
+  background: #fff;
+  height: 4rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100; }
+
+.logo {
+  padding: 0 0.6rem 0 1.25rem;
+  height: 4rem;
+  display: inline-block;
+  font-size: 1.8rem;
+  line-height: 4rem; }
+
+.header_nav {
+  position: absolute;
+  margin-right: .75rem;
+  right: 0;
+  top: 0;
+  height: 5rem; }
+  .header_nav a {
+    display: inline-block;
+    padding: 1.3rem 0.7rem;
+    font-size: 1rem;
+    font-weight: 700; }
+
+.wrapper {
+  width: 64pc;
+  margin: 0 auto;
+  padding: 5.5rem 1rem; }
+  .wrapper .tips {
+    background: #D9EDF7;
+    padding: 1px;
+    text-align: center;
+    color: #31708f;
+    margin-bottom: 12px; }
+  .wrapper .left {
+    background: #fff;
+    width: 20.3%;
+    float: left; }
+    .wrapper .left ul li {
+      width: 100%;
+      height: 2rem;
+      display: block;
+      text-align: center; }
+  .wrapper .right {
+    box-sizing: border-box;
+    float: right;
+    width: 77.7%;
+    background: #fff;
+    padding: 15px; }
+    .wrapper .right h2 {
+      margin: 0;
+      color: #555; }
+    .wrapper .right .right-content {
+      padding: 40px; }
+    .wrapper .right form {
+      text-align: center; }
+
+table {
+  font-family: 'Arial';
+  margin: 25px auto;
+  border-collapse: collapse;
+  border: 1px solid #eee;
+  border-bottom: 2px solid #3aa3e3; }
+  table tr:hover {
+    background: #f4f4f4; }
+    table tr:hover td {
+      color: #555; }
+  table th, table td {
+    color: #999;
+    border: 1px solid #eee;
+    padding: 12px 35px;
+    border-collapse: collapse; }
+  table th {
+    background: #3aa3e3;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px; }
+    table th.last {
+      border-right: none; }
+
+footer {
+  text-align: center; }

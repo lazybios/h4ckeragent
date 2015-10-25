@@ -1,11 +1,29 @@
-<h1>创建PASSCODE</h1>
-<%= form_for @access do |f| %>
-    <p>PASSCODE名称</p>
-    <p><%= f.text_field :remark %></p>
-    <p>过期时间</p>
-    <p><%= f.text_field :expire_at %></p>
-    <p>绑定的简历</p>
-    <p><%= select "access", "resume_id", current_user.resumes.collect { |r| [r.title, r.id]} %></p>
-    <p><%= link_to "创建更多简历", :resumes %></p>
-    <p><%= f.submit "生成" %></p>
-<% end %>
+        <div class="wrapper clearfix">
+            <div class="tips">
+                <p>这是个提醒</p>
+            </div>
+            <div class="left">
+                <ul>
+                    <li><%= link_to "查看简历", :resumes %></li>
+                    <li><%= link_to "创建简历", :new_resume %></li>
+                    <li><%= link_to "创建PASSCODE", :new_access %></li>
+                    <li><%= link_to "PASSCODE列表", :accesses %></li>
+                    <li><a href="">访问统计</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <h2>创建PASSCODE</h2>
+                <div class="right-content">
+                    <%= form_for @access do |f| %>
+                        <p>PASSCODE名称</p>
+                        <p><%= f.text_field :remark %></p>
+                        <p>过期时间</p>
+                        <p><%= f.text_field :expire_at %></p>
+                        <p>绑定的简历</p>
+                        <p><%= select "access", "resume_id", current_user.resumes.collect { |r| [r.title, r.id]} %></p>
+                        <p><%= link_to "创建更多简历", :resumes %></p>
+                        <p><%= f.submit "生成" %></p>
+                    <% end %>
+                </div>
+            </div>
+        </div>

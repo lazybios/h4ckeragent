@@ -1,14 +1,37 @@
+
+
 <!DOCTYPE html>
 <html>
-<head>
-  <title>H4ckresume</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>h4ckerresume</title>
+          <title>H4ckresume</title>
+          <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+          <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+          <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <header>
+            <a href="" class="logo" >
+                H4kerResume
+            </a>
+            <div class="header_nav">
+                <% if current_user %>
+                    <%= link_to current_user.email  %>
+                    <%= link_to "登出", :logout, method: "delete" %>
+                    <%= link_to "设置", :setting %>
+                    <a href="#">About</a>
+                <% else %>
+                    <%= link_to "登录", :login %>
+                    <%= link_to "注册", :signup %>
+                    <a href="#">About</a>
+                <% end %>
+            </div>
+        </header>
+        <%= yield %>
+        <footer>
+            <p>&copy; 2015 lazybios.com<p>
+        </footer>
+    </body>
 </html>

@@ -1,8 +1,38 @@
-<h1>Resumes#index</h1>
-<% @resumes.each do |resume| %>
-    <p>
-        <%= link_to resume.title, resume_path(resume) %> |
-        <%= link_to "编辑", edit_resume_path(resume) %> |
-        <%= link_to "删除", resume_path(resume), method: "delete" %>
-    </p>
-<% end %>
+        <div class="wrapper clearfix">
+            <div class="tips">
+                <p>这是个提醒</p>
+            </div>
+            <div class="left">
+                <ul>
+                    <li><%= link_to "查看简历", :resumes %></li>
+                    <li><%= link_to "创建简历", :new_resume %></li>
+                    <li><%= link_to "创建PASSCODE", :new_access %></li>
+                    <li><%= link_to "PASSCODE列表", :accesses %></li>
+                    <li><a href="">访问统计</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <h2>查看简历</h2>
+                <div class="right-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>标题</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @resumes.each do |resume| %>
+                            <tr>
+                                <td><%= link_to resume.title, resume_path(resume) %></td>
+                                <td>
+                                    <%= link_to "编辑", edit_resume_path(resume) %> |
+                                    <%= link_to "删除", resume_path(resume), method: "delete" %>
+                                </td>
+                            </tr>
+                        <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>

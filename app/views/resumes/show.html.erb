@@ -1,4 +1,35 @@
-<h1><%= @resume.title %></h1>
-<div>
-    <%= markdown(@resume.body_origin) %>
+<style type="text/css" media="">
+.wrapper {
+  width: 64pc;
+  margin: 0 auto; }
+  .wrapper .tips {
+    background: #D9EDF7;
+    padding: 1px;
+    text-align: center;
+    color: #31708f;
+    margin-bottom: 12px; }
+  .wrapper .resume {
+    box-sizing: border-box;
+    background: #fff;
+    padding: 40px; }
+    .wrapper .resume p {
+      line-height: 1.6em; }
+    .wrapper .resume h2 {
+      margin: 0;
+      color: #555; }
+    .wrapper .resume .right-access {
+      padding: 40px;
+      text-align: center; }
+      .wrapper .resume .right-access p {
+        margin-bottom: 4px; }
+      .wrapper .resume .right-access .helper {
+        font-size: .7em;
+        margin: 0; }
+    .wrapper .resume form {
+      text-align: center; }
+</style>
+<div class="wrapper clearfix">
+    <div class="resume markdown">
+        <%= markdown(@resume.body_origin) %>
+    </div>
 </div>
