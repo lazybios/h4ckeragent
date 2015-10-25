@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :require_user
+
   def login
   end
 
@@ -31,6 +34,9 @@ class UsersController < ApplicationController
   def logout
     session[:token] = nil
     redirect_to :root
+  end
+
+  def status
   end
 
   def setting
